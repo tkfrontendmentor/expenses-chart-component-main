@@ -1,38 +1,110 @@
+:root {
+  ---soft-red: hsl(10, 79%, 65%);
+  ---soft-red-active: hsl(11, 100%, 70%);
+  ---cyan: hsl(186, 34%, 60%);
+  ---cyan-active: hsl(186, 60%, 73%);
+
+  ---dark-brown: hsl(25, 47%, 15%);
+  ---medium-brown: hsl(28, 10%, 53%);
+  ---cream: hsl(27, 66%, 92%);
+  ---very-pale-orange: hsl(33, 100%, 98%);
+
+  ---border-radius: 10px;
+  ---padding: 15px;
+}
+
 .App {
-  text-align: center;
+  max-width: 550px;
+  margin: 70px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1,h2,h3,h4 {
+  color: var(---dark-brown);
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+  color: var(---medium-brown);
+  margin: 0;
+  padding: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.balance,.spendingBar {
+  background-color: var(---soft-red);
+}
+.balance {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+}
+
+.balanceTotal > * {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.spendingTitle {
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.amount {
+  visibility: hidden;
+  background-color: var(---dark-brown);
+  padding: 5px;
+  border-radius: var(---border-radius);
+  color: white;
+  margin-bottom: 10px;
+  width: 60px;
+}
+.spendingBar:hover {
+  background-color: var(---soft-red-active);
+}
+
+.spendingBarToday {
+  background-color: var(---cyan);
+}
+
+.spendingBarToday:hover {
+  background-color: var(---cyan-active);
+}
+
+.balance {
+  border-radius: var(---border-radius);
+  padding: var(---padding);
+}
+
+.spending {
+  background-color: var(---very-pale-orange);
+  border-radius: var(---border-radius);
+  padding: var(---padding);
+  margin-top: 20px;
+}
+
+.weeklyChart {
+  display: flex;
+  padding-top: 15px;
+  justify-content: space-between;
+}
+
+.day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.spendingBar, .spendingBarToday {
+  display: inline-block;
+  border-radius: 5px;
+  width: 50px;
+  /*margin: 0 20px;*/
+}
+
+
+.monthlyTotal {
+  border-top: var(---cream) 2px solid;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
